@@ -4,7 +4,7 @@
     echo "data found";
   }else{
     echo "not found data";
-  }*/
+  }
 
   // email validation
   if (filter_has_var(INPUT_POST, 'data')) {
@@ -19,7 +19,17 @@
     }else {
       echo "e mail is not valid";
     }
+  }*/
+  //integer validation
+  $var = 11;
+
+  if (filter_var($var, FILTER_VALIDATE_INT)) {
+    echo $var.'is a number';
+  }else {
+    echo $var.'is not a number';
   }
+
+
  ?>
 
 
