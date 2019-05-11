@@ -8,6 +8,12 @@
 
   // email validation
   if (filter_has_var(INPUT_POST, 'data')) {
+    $email = $_POST['data'];
+
+    //remove illegle characters
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    echo $email.'<br>';
+
     if (filter_input(INPUT_POST, 'data', FILTER_VALIDATE_EMAIL)) {
       echo "e mail is valid";
     }else {
